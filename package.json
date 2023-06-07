@@ -2,6 +2,7 @@
     "name": "technical_task",
     "version": "0.1.0",
     "private": true,
+    "homepage": "https://danzay.github.io/kefir.github.io/",
     "scripts": {
         "start": "react-scripts start",
         "build": "react-scripts build",
