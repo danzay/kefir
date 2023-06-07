@@ -135,7 +135,6 @@ export const Comments = () => {
                                     width = { 234 }
                                     height = { 36 }
                                     margin = "60px 0 0 0"
-                                    bg = "#313439"
                                     disabled = { isLoading }
                                     onClick = { loadComments }
                                 >

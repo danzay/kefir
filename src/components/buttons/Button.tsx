@@ -3,7 +3,6 @@
 import styled from "styled-components";
 
 interface IButtonProps {
-    bg: string;
     width?: number;
     height?: number;
     padding?: string;
@@ -19,5 +18,6 @@ export const Button = styled.button<IButtonProps>`
   height: ${ ( props ) => props.height }px;
   padding: ${ ( props ) => props.padding };
   margin: ${ ( props ) => props.margin };
-  background-color: ${ ( props ) => props.bg };
+  background-color: ${ ( props ) => props.theme.colors.button };
+  color: ${ ( props ) => props.theme.colors.text };
 `;
