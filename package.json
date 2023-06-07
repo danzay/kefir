@@ -1,13 +1,15 @@
 {
+    "homepage": "https://danzay.github.io/kefir",
     "name": "technical_task",
     "version": "0.1.0",
     "private": true,
-    "homepage": "https://danzay.github.io/kefir.github.io/",
     "scripts": {
         "start": "react-scripts start",
         "build": "react-scripts build",
         "test": "react-scripts test",
-        "prettier": "prettier --write '*/**/*.{ts,tsx,js,jsx,css,scss,json}'"
+        "prettier": "prettier --write '*/**/*.{ts,tsx,js,jsx,css,scss,json}'",
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d build"
     },
     "dependencies": {
         "@reduxjs/toolkit": "^1.9.5",
@@ -22,6 +24,7 @@
         "axios": "0.27.2",
         "axios-mock-adapter": "1.20.0",
         "date-fns": "^2.30.0",
+        "gh-pages": "^5.0.0",
         "i18next": "^22.5.0",
         "i18next-browser-languagedetector": "^7.0.2",
         "i18next-http-backend": "^2.2.1",
