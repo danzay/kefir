@@ -22,8 +22,8 @@ const IconStyle = styled( Icon )`
   }
 `;
 
-export const LoadingIcon = ()=>{
+export const LoadingIcon = () => {
     return (
         <IconStyle size = "m" src = { loadingIcon } />
     );
-}
+};
