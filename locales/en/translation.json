@@ -1,0 +1,18 @@
+{
+  "comments": {
+    "loadMoreBtnTitle": "Load more",
+    "commentsTitles": ["comment", "comment", "comments"]
+  },
+  "date": {
+    "hour": ["hour", "hours", "hours"],
+    "minute": ["minute", "minutes", "minutes"],
+    "minuteDeclension": ["minute", "minutes", "minutes"],
+    "second": ["second", "seconds", "seconds"],
+    "secondDeclension": ["second", "seconds", "seconds"],
+    "ago": "ago"
+  },
+  "errors": {
+    "commentsLoad": "Could not upload comments! Please, try again.",
+    "authorsLoad": "Could not get data about the authors."
+  }
+}
