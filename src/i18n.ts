@@ -12,7 +12,9 @@ i18n
     .init( {
         fallbackLng: 'ru',
         backend: {
-            loadPath: '/kefir/locales/{{lng}}/{{ns}}.json'
+            loadPath: '/kefir/locales/{{lng}}/{{ns}}.json',
+            addPath: 'kefir/locales/add/{{lng}}/{{ns}}',
+            allowMultiLoading: false
         }
     } );
 
