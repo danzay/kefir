@@ -11,6 +11,9 @@ i18n
     .use( initReactI18next )
     .init( {
         fallbackLng: 'ru',
+        backend: {
+            loadPath: '/kefir/locales/{{lng}}/{{ns}}.json'
+        }
     } );
 
 export default i18n;
