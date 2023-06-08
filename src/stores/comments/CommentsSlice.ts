@@ -31,6 +31,7 @@ export const commentsSlice = createSlice( {
         addLike: ( state, { payload }: PayloadAction<number> ) => {
             state.likesQuantity += 1;
             state.commentsStorage[ payload ].likes += 1;
+            console.log('addLike:', payload, state.commentsStorage);
         },
         removeLike: ( state, { payload }: PayloadAction<number> ) => {
             state.likesQuantity -= 1;

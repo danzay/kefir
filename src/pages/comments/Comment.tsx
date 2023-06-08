@@ -11,7 +11,7 @@ import heartEmptyIcon from "../../assets/icons/heartEmpty.svg";
 import heartFullIcon from "../../assets/icons/heartFull.svg";
 
 interface ICommentProps {
-    comment: IComment,
+    commentId: number,
     nestedLevel?: number
 }
 
@@ -41,9 +41,11 @@ const CommentStyle = styled.div<{ level: number }>`
 
 const useWordSelector: TypedUseSelectorHook<RootState> = useSelector;
 
-export const Comment = ( { comment, nestedLevel }: ICommentProps ) => {
+export const Comment = ( { commentId, nestedLevel }: ICommentProps ) => {
+    const commentsStorage = useWordSelector( ( state ) => state.comments.commentsStorage );
     const authors = useWordSelector( ( state ) => state.comments.authorsData );
-    const { id, text, likes, created, author } = comment;
+
+    const { id, text, likes, created, author } = commentsStorage[commentId];
     const authorData: IAuthor = authors[ author ];
     const date = dateParser( created );
 

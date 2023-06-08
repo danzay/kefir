@@ -64,7 +64,7 @@ const getComments = ( comments: IComment[], level: number = 0 ): JSX.Element[] =
         return (
             <React.Fragment key = { commentData.id }>
                 <Comment
-                    comment = { commentData }
+                    commentId = { commentData.id }
                     nestedLevel = { level }
                 />
                 {
