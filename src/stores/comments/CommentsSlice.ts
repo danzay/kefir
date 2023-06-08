@@ -1,7 +1,7 @@
 /** A storage for comments section. */
 
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { IAuthor, IComment } from "../../models/";
+import { IAuthor, IComment, ICommentsRequest } from "../../models/";
 import { authorsConfig, commentsConfig } from "./CommentsRequests";
 
 interface ICommentsState {
@@ -46,12 +46,11 @@ export const commentsSlice = createSlice( {
         );
         builder.addCase(
             commentsConfig.fulfilled,
-            ( state, { payload }: PayloadAction<any> ) => {
+            ( state, { payload }: PayloadAction<ICommentsRequest> ) => {
                 state.loading = false;
 
                 if ( payload && state.currentPage !== payload?.pagination?.page ) {
                     const { data, pagination } = payload;
-                    const result: IComment[] = [];
 
                     state.totalPages = pagination.total_pages;
                     state.currentPage = pagination.page;
@@ -63,14 +62,11 @@ export const commentsSlice = createSlice( {
                     }, 0 );
 
                     data.forEach( ( comment: IComment ) => {
-                        if ( comment.parent == null ) {
-                            result.push( comment );
-                        } else {
+                        if ( comment.parent !== null ) {
                             const children = state.commentsStorage[ comment.parent ].children || [];
 
                             children.push( comment );
                             state.commentsStorage[ comment.parent ].children = children;
-
                         }
                     } );
                 }
@@ -90,7 +86,7 @@ export const commentsSlice = createSlice( {
         );
         builder.addCase(
             authorsConfig.fulfilled,
-            ( state, { payload }: PayloadAction<any> ) => {
+            ( state, { payload }: PayloadAction<IAuthor[]> ) => {
                 state.loading = false;
                 if ( payload?.length ) {
                     payload.forEach( ( author: IAuthor ) => state.authorsData[ author.id ] = author );

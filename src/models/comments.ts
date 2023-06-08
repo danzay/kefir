@@ -14,3 +14,14 @@ export interface IAuthor {
     name: string,
     avatar: string
 }
+
+export interface IPagination {
+    page: number;
+    size: number;
+    total_pages: number;
+}
+
+export interface ICommentsRequest {
+    pagination: IPagination;
+    data: IComment[];
+}
