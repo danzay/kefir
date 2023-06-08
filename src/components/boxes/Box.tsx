@@ -4,7 +4,7 @@ interface IBoxProps {
     padding?: string;
     margin?: string;
     flex?: number;
-    overflow?: any;
+    overflow?: string;
 }
 
 export const Box = styled.div<IBoxProps>`

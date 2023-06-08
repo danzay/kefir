@@ -1,3 +1,5 @@
+/** The component displays a toggle button. */
+
 import React, { useState } from "react";
 
 interface IToggleButtonProps {
